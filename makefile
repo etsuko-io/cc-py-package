@@ -13,7 +13,7 @@ activate-venv:
 	pyenv local venv-cc-py-package
 
 install:
-	pip install -r requirements/requirements.txt
+	pip install -r requirements/base.txt
 
-install-testing:
-	pip install -r requirements/requirements-testing.txt
+install-local:
+	pip install -r requirements/extra.txt
