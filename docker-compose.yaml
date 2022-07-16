@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  be-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "k8s-be"
+    ports:
+      - 8080:8080
