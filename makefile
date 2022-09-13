@@ -1,3 +1,4 @@
+VENV := "venv-cc-package"
 test:
 	python -m pytest -vv
 
@@ -6,14 +7,17 @@ format:
 	isort .
 	flake8
 
-make-venv:
-	pyenv virtualenv 3.10.2 venv-cc-py-package && pyenv local venv-cc-py-package
+venv:
+	pyenv virtualenv 3.10.2 ${VENV} && pyenv local ${VENV}
 
 activate-venv:
-	pyenv local venv-cc-py-package
+	pyenv local ${VENV}
 
 install:
 	pip install -r requirements/base.txt
 
 install-local:
 	pip install -r requirements/extra.txt
+
+pre-commit:
+	pre-commit install
